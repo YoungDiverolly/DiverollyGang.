@@ -4,12 +4,27 @@
 <meta charset="UTF-8">
 <title>IB PROJECT</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;900&display=swap" rel="stylesheet">
-
-.container {
-    width: 100%;
-    max-width: 100%;
+    
+<style>
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
+
+/* Увеличиваем ширину контента */
+.container {
+    max-width: 1200px; /* например */
+    margin: 0 auto;
+    padding: 20px;
+}
+</style>
+
+<div class="container">
+  <p>Тут твой контент, который будет шире.</p>
+</div>
+
 
 }
 
