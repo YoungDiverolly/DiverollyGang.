@@ -5,12 +5,12 @@
 <title>IB PROJECT</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;900&display=swap" rel="stylesheet">
 
-<style>
-* {
+.container {
+    width: 100%;
+    max-width: 100%;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+}
+
 }
 
 body {
