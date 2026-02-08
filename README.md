@@ -1,204 +1,174 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>IB PROJECT</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;900&display=swap" rel="stylesheet">
-    
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
+    <meta charset="UTF-8">
+    <title>DIVEROLLY GANG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* Увеличиваем ширину контента */
-.container {
-    max-width: 1200px; /* например */
-    margin: 0 auto;
-    padding: 20px;
-}
-</style>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-<div class="container">
-  <p>Тут твой контент, который будет шире.</p>
-</div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #ffffff, #f2f2f2);
+            color: #111;
+            min-height: 100vh;
+        }
 
-}
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
 
-body {
-    background: radial-gradient(circle at top, #12002e, #050008);
-    color: white;
-    overflow-x: hidden;
-}
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            letter-spacing: 6px;
+            font-weight: 800;
+        }
 
-/* HEADER */
-header {
-    position: fixed;
-    width: 100%;
-    padding: 28px 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-    background: linear-gradient(to bottom, rgba(5,0,8,0.8), transparent);
-}
+        header p {
+            margin-top: 20px;
+            max-width: 600px;
+            font-size: 1.1rem;
+            color: #555;
+        }
 
-.logo {
-    font-size: 34px;
-    font-weight: 900;
-    letter-spacing: 6px;
-    background: linear-gradient(90deg, #8b5cf6, #ec4899, #f59e0b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: #000;
+            margin: 30px 0;
+        }
 
-nav a {
-    margin-left: 36px;
-    text-decoration: none;
-    color: #ddd;
-    font-weight: 300;
-}
+        section {
+            padding: 100px 10%;
+        }
 
-nav a:hover {
-    color: white;
-}
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
 
-/* HERO */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-left: 80px;
-    position: relative;
-}
+        section p {
+            max-width: 700px;
+            line-height: 1.7;
+            color: #444;
+        }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 70% 20%, #8b5cf644, transparent 40%),
-      radial-gradient(circle at 20% 60%, #ec489944, transparent 40%);
-}
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
 
-.hero-content {
-    position: relative;
-    max-width: 700px;
-}
+        .card {
+            background: rgba(255,255,255,0.7);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.hero h1 {
-    font-size: 96px;
-    font-weight: 900;
-    line-height: 1;
-    background: linear-gradient(90deg, #fff, #d4d4d4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
 
-.hero p {
-    margin-top: 30px;
-    font-size: 22px;
-    opacity: 0.8;
-}
+        .card h3 {
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
 
-.buttons {
-    margin-top: 50px;
-}
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #777;
+        }
 
-.buttons a {
-    padding: 18px 46px;
-    margin-right: 20px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-}
-
-.primary {
-    background: linear-gradient(90deg, #8b5cf6, #ec4899);
-    box-shadow: 0 0 40px #8b5cf688;
-}
-
-.secondary {
-    border: 1px solid #ffffff33;
-}
-
-/* INFO */
-.info {
-    display: flex;
-    justify-content: space-around;
-    padding: 100px 60px;
-    background: linear-gradient(to top, #050008, #070010);
-}
-
-.block {
-    text-align: center;
-}
-
-.block h2 {
-    font-size: 52px;
-    background: linear-gradient(90deg, #8b5cf6, #ec4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.block p {
-    margin-top: 10px;
-    opacity: 0.7;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 50px;
-    opacity: 0.5;
-}
-</style>
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-    <div class="logo">IB</div>
-    <nav>
-        <a href="#">Главная</a>
-        <a href="#">Коллекции</a>
-        <a href="#">Контакты</a>
-    </nav>
+    <h1>DIVEROLLY GANG</h1>
+    <div class="divider"></div>
+    <p>
+        A luxury fashion concept inspired by modern street culture, minimalism,
+        and high-end design aesthetics.
+    </p>
 </header>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>IB CLOTHING</h1>
-        <p>Премиальный дизайн одежды нового уровня</p>
-        <div class="buttons">
-            <a href="#" class="primary">Смотреть дроп</a>
-            <a href="#" class="secondary">О проекте</a>
+<section>
+    <h2>Brand Concept</h2>
+    <p>
+        DIVEROLLY GANG is a fashion design project focused on expressing identity,
+        confidence, and exclusivity through clean silhouettes and premium style.
+        The brand combines street culture with luxury fashion.
+    </p>
+</section>
+
+<section>
+    <h2>Our Collection</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Minimal Wear</h3>
+            <p>
+                Clean colors, oversized shapes, and premium materials
+                inspired by modern luxury brands.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Street Luxury</h3>
+            <p>
+                Streetwear mixed with high fashion aesthetics,
+                designed for confidence and individuality.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Limited Pieces</h3>
+            <p>
+                Exclusive drops that emphasize rarity, uniqueness,
+                and artistic expression.
+            </p>
         </div>
     </div>
 </section>
 
-<section class="info">
-    <div class="block">
-        <h2>12+</h2>
-        <p>Коллекций</p>
-    </div>
-    <div class="block">
-        <h2>500+</h2>
-        <p>Моделей</p>
-    </div>
-    <div class="block">
-        <h2>IB</h2>
-        <p>Эксклюзив</p>
-    </div>
+<section>
+    <h2>IB Project Focus</h2>
+    <p>
+        This website was created as part of an IB design project.
+        It demonstrates branding, visual identity, web design,
+        and fashion concept development.
+    </p>
 </section>
 
 <footer>
-    © IB PROJECT • Premium Style
+    © 2026 DIVEROLLY GANG — Fashion Design Concept
 </footer>
 
 </body>
