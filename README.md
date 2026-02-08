@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>DIVEROLLY GANG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -17,93 +17,106 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #ffffff, #f2f2f2);
+            background: linear-gradient(
+                135deg,
+                #0f0f0f 0%,
+                #1a1a1a 25%,
+                #c9b37e 50%,
+                #f5f5f5 75%,
+                #ffffff 100%
+            );
             color: #111;
             min-height: 100vh;
         }
 
         header {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px;
+            padding: 60px 20px;
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(20px);
         }
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            letter-spacing: 6px;
+            font-size: 4.2rem;
             font-weight: 800;
+            letter-spacing: 8px;
         }
 
         header p {
-            margin-top: 20px;
-            max-width: 600px;
-            font-size: 1.1rem;
-            color: #555;
+            margin-top: 25px;
+            max-width: 650px;
+            font-size: 1.15rem;
+            color: #444;
         }
 
-        .divider {
-            width: 80px;
+        .line {
+            width: 90px;
             height: 2px;
-            background: #000;
-            margin: 30px 0;
+            background: linear-gradient(90deg, #000, #c9b37e);
+            margin: 35px 0;
         }
 
         section {
-            padding: 100px 10%;
+            padding: 110px 10%;
         }
 
         section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             margin-bottom: 30px;
         }
 
         section p {
-            max-width: 700px;
-            line-height: 1.7;
-            color: #444;
+            max-width: 750px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333;
         }
 
-        .cards {
+        .grid {
+            margin-top: 60px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
         }
 
-        .card {
-            background: rgba(255,255,255,0.7);
-            border-radius: 20px;
-            padding: 40px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .box {
+            background: rgba(255,255,255,0.85);
+            border-radius: 22px;
+            padding: 45px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+            transition: 0.4s ease;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        .box:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.18);
         }
 
-        .card h3 {
-            margin-bottom: 15px;
+        .box h3 {
             font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
         }
 
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 45px;
+            background: rgba(0,0,0,0.9);
+            color: #aaa;
             font-size: 0.9rem;
-            color: #777;
         }
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2.8rem;
+                font-size: 2.9rem;
+                letter-spacing: 4px;
             }
         }
     </style>
@@ -112,63 +125,69 @@
 
 <header>
     <h1>DIVEROLLY GANG</h1>
-    <div class="divider"></div>
+    <div class="line"></div>
     <p>
-        A luxury fashion concept inspired by modern street culture, minimalism,
-        and high-end design aesthetics.
+        Концептуальный бренд одежды, сочетающий уличную культуру,
+        минимализм и эстетику люксовой моды.
     </p>
 </header>
 
 <section>
-    <h2>Brand Concept</h2>
+    <h2>Концепция бренда</h2>
     <p>
-        DIVEROLLY GANG is a fashion design project focused on expressing identity,
-        confidence, and exclusivity through clean silhouettes and premium style.
-        The brand combines street culture with luxury fashion.
+        DIVEROLLY GANG — это дизайнерский проект в сфере моды,
+        направленный на создание визуальной идентичности,
+        передающей уверенность, статус и индивидуальность.
+        Бренд вдохновлён современной культурой и премиальным стилем.
     </p>
 </section>
 
 <section>
-    <h2>Our Collection</h2>
+    <h2>Коллекции</h2>
 
-    <div class="cards">
-        <div class="card">
-            <h3>Minimal Wear</h3>
+    <div class="grid">
+        <div class="box">
+            <h3>Минимализм</h3>
             <p>
-                Clean colors, oversized shapes, and premium materials
-                inspired by modern luxury brands.
+                Чистые формы, спокойные оттенки и внимание к деталям.
+                Одежда, подчёркивающая стиль без лишнего шума.
             </p>
         </div>
 
-        <div class="card">
+        <div class="box">
             <h3>Street Luxury</h3>
             <p>
-                Streetwear mixed with high fashion aesthetics,
-                designed for confidence and individuality.
+                Слияние уличной моды и люкса.
+                Современный силуэт и премиальное ощущение.
             </p>
         </div>
 
-        <div class="card">
-            <h3>Limited Pieces</h3>
+        <div class="box">
+            <h3>Лимитированные дропы</h3>
             <p>
-                Exclusive drops that emphasize rarity, uniqueness,
-                and artistic expression.
+                Ограниченные коллекции,
+                создающие ощущение эксклюзивности и ценности.
             </p>
         </div>
     </div>
 </section>
 
 <section>
-    <h2>IB Project Focus</h2>
+    <h2>IB Design Project</h2>
     <p>
-        This website was created as part of an IB design project.
-        It demonstrates branding, visual identity, web design,
-        and fashion concept development.
+        Данный сайт создан в рамках проекта IB по дизайну.
+        Он демонстрирует процесс разработки бренда,
+        визуального стиля и концепции модной одежды.
     </p>
 </section>
 
 <footer>
     © 2026 DIVEROLLY GANG — Fashion Design Concept
+</footer>
+
+</body>
+</html>
+
 </footer>
 
 </body>
