@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIVEROLLY GANG | Official Concept</title>
 
-    <!-- Шрифты -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
@@ -16,16 +16,11 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(
-                135deg,
-                #0f0f0f 0%,
-                #1a1a1a 25%,
-                #c9b37e 50%,
-                #f5f5f5 75%,
-                #ffffff 100%
-            );
-            color: #111;
+            /* Градиент стал более мягким и премиальным */
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #ffffff;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         header {
@@ -36,80 +31,113 @@
             align-items: center;
             text-align: center;
             padding: 40px 20px;
-            background: rgba(255,255,255,0.75);
-            backdrop-filter: blur(20px);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(15px);
         }
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4.2rem;
+            font-size: 5rem;
             font-weight: 900;
-            letter-spacing: 8px;
-            margin-top: -50px;
+            letter-spacing: 12px;
+            color: #c9b37e; /* Золотистый акцент */
+            margin-bottom: 20px;
         }
 
         .line {
-            width: 40px;
+            width: 60px;
             height: 2px;
-            background: #ffffff;
+            background: #c9b37e;
             margin: 20px 0;
         }
 
         header p {
-            margin-top: 20px;
-            max-width: 650px;
-            font-size: 1.15rem;
-            font-weight: 500;
-            color: #444;
+            max-width: 700px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-weight: 300;
+            color: #ddd;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        section {
-            padding: 110px 10%;
+        /* ==== NEW: QUALITY SECTION ==== */
+        .quality-section {
+            padding: 100px 10%;
+            background: #ffffff;
+            color: #111;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .quality-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .quality-item p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* ==== PRODUCT ==== */
+        section.collection {
+            padding: 120px 10%;
             text-align: center;
         }
 
         section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.6rem;
+            font-size: 3rem;
             font-weight: 800;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
+            color: #fff;
         }
 
-        /* ==== PRODUCT ==== */
         .product-card {
-            width: 420px;
+            width: 450px;
             margin: 0 auto;
-            transition: transform 0.4s ease;
+            position: relative;
+            cursor: crosshair;
         }
 
         .product-card img {
             width: 100%;
-            border-radius: 20px;
-            transition: transform 0.4s ease, opacity 0.4s ease;
+            border-radius: 5px; /* Более строгие углы для люкса */
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            filter: grayscale(20%);
         }
 
         .product-card:hover img {
-            transform: scale(1.05);
+            transform: scale(1.02);
+            filter: grayscale(0%);
+        }
+
+        .price-tag {
+            margin-top: 25px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #c9b37e;
         }
 
         footer {
             text-align: center;
-            padding: 45px;
-            background: rgba(0,0,0,0.9);
-            color: #aaa;
-            font-size: 0.9rem;
+            padding: 60px;
+            background: #000;
+            color: #555;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.9rem;
-                letter-spacing: 4px;
-                margin-top: -30px;
-            }
-
-            .product-card {
-                width: 90%;
-            }
+            header h1 { font-size: 2.5rem; letter-spacing: 5px; }
+            .product-card { width: 100%; }
+            .quality-section { padding: 60px 5%; }
         }
     </style>
 </head>
@@ -119,38 +147,61 @@
     <h1>DIVEROLLY GANG</h1>
     <div class="line"></div>
     <p>
-        Концептуальный бренд одежды, сочетающий уличную культуру,
-        минимализм и эстетику люксовой моды.
+        Новая эра уличной моды. <br>
+        Бескомпромиссное качество. Эстетика хаоса и порядка.
     </p>
 </header>
 
-<section>
-    <h2>Коллекция</h2>
+<section class="quality-section">
+    <div class="quality-item">
+        <h3>PREMIUM TEXTILE</h3>
+        <p>Используем только плотный хлопок высшего сорта (450g+). Ткань, которая держит форму и приятна к телу годами.</p>
+    </div>
+    <div class="quality-item">
+        <h3>HANDMADE DETAILS</h3>
+        <p>Каждый принт и шов проходят ручной контроль. Мы не делаем масс-маркет — мы создаем артефакты.</p>
+    </div>
+    <div class="quality-item">
+        <h3>NEW GEN CULTURE</h3>
+        <p>DIVEROLLY GANG — это не просто одежда. Это манифест свободы, объединяющий тех, кто диктует свои правила.</p>
+    </div>
+</section>
 
-    <div class="product-card"
-         onmouseenter="startFlip()"
+<section class="collection">
+    <h2>DROP #01</h2>
+
+    <div class="product-card" 
+         onmouseenter="startFlip()" 
          onmouseleave="stopFlip()">
-
-        <img id="productImage" src="front.png" alt="Diverolly Gang Sweatshirt">
+        
+        <img id="productImage" src="front.png" alt="Diverolly Gang Limited Edition">
+        <div class="price-tag">LIMITED DROP</div>
     </div>
 </section>
 
 <footer>
-    © 2026 DIVEROLLY GANG — Fashion Design Concept
+    © 2026 DIVEROLLY GANG — DEFINING THE NEW STANDARD
 </footer>
 
 <script>
     let flipTimer;
 
     function startFlip() {
+        // Уменьшил задержку до 1 секунды, чтобы юзер сразу видел эффект
         flipTimer = setTimeout(() => {
-            document.getElementById("productImage").src = "back.png";
-        }, 3000);
+            const img = document.getElementById("productImage");
+            img.style.opacity = "0.7";
+            setTimeout(() => {
+                img.src = "back.png";
+                img.style.opacity = "1";
+            }, 200);
+        }, 800);
     }
 
     function stopFlip() {
         clearTimeout(flipTimer);
-        document.getElementById("productImage").src = "front.png";
+        const img = document.getElementById("productImage");
+        img.src = "front.png";
     }
 </script>
 
