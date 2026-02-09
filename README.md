@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Шрифты (жирные веса подключены) -->
+    <!-- Шрифты -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
@@ -35,7 +35,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px 20px; /* меньше воздуха */
+            padding: 40px 20px;
             background: rgba(255,255,255,0.75);
             backdrop-filter: blur(20px);
         }
@@ -43,15 +43,15 @@
         header h1 {
             font-family: 'Playfair Display', serif;
             font-size: 4.2rem;
-            font-weight: 900;      /* жирнее */
+            font-weight: 900;
             letter-spacing: 8px;
-            margin-top: -50px;     /* выше */
+            margin-top: -50px;
         }
 
         .line {
-            width: 40px;           /* короче */
+            width: 40px;
             height: 2px;
-            background: #ffffff;   /* белая */
+            background: #ffffff;
             margin: 20px 0;
         }
 
@@ -65,48 +65,31 @@
 
         section {
             padding: 110px 10%;
+            text-align: center;
         }
 
         section h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.6rem;
             font-weight: 800;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
-        section p {
-            max-width: 750px;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            font-weight: 500;
-            color: #333;
+        /* ==== PRODUCT ==== */
+        .product-card {
+            width: 420px;
+            margin: 0 auto;
+            transition: transform 0.4s ease;
         }
 
-        .grid {
-            margin-top: 60px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 35px;
+        .product-card img {
+            width: 100%;
+            border-radius: 20px;
+            transition: transform 0.4s ease, opacity 0.4s ease;
         }
 
-        .box {
-            background: rgba(255,255,255,0.85);
-            border-radius: 22px;
-            padding: 45px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
-            transition: 0.4s ease;
-        }
-
-        .box:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 40px 80px rgba(0,0,0,0.18);
-        }
-
-        .box h3 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-            font-weight: 700;
+        .product-card:hover img {
+            transform: scale(1.05);
         }
 
         footer {
@@ -123,6 +106,10 @@
                 letter-spacing: 4px;
                 margin-top: -30px;
             }
+
+            .product-card {
+                width: 90%;
+            }
         }
     </style>
 </head>
@@ -138,52 +125,34 @@
 </header>
 
 <section>
-    <h2>Концепция бренда</h2>
-    <p>
-        DIVEROLLY GANG — это дизайнерский проект в сфере моды,
-        направленный на создание визуальной идентичности,
-        передающей уверенность, статус и индивидуальность.
-    </p>
-</section>
+    <h2>Коллекция</h2>
 
-<section>
-    <h2>Коллекции</h2>
+    <div class="product-card"
+         onmouseenter="startFlip()"
+         onmouseleave="stopFlip()">
 
-    <div class="grid">
-        <div class="box">
-            <h3>Минимализм</h3>
-            <p>
-                Чистые формы, спокойные оттенки и внимание к деталям.
-            </p>
-        </div>
-
-        <div class="box">
-            <h3>Street Luxury</h3>
-            <p>
-                Слияние уличной моды и люкса с премиальным ощущением.
-            </p>
-        </div>
-
-        <div class="box">
-            <h3>Лимитированные дропы</h3>
-            <p>
-                Ограниченные коллекции, подчёркивающие эксклюзивность.
-            </p>
-        </div>
+        <img id="productImage" src="front.png" alt="Diverolly Gang Sweatshirt">
     </div>
-</section>
-
-<section>
-    <h2>Уникальность бренда</h2>
-    <p>
-        Каждая вещь создаётся как кастомный элемент стиля,
-        отражающий индивидуальность владельца.
-    </p>
 </section>
 
 <footer>
     © 2026 DIVEROLLY GANG — Fashion Design Concept
 </footer>
+
+<script>
+    let flipTimer;
+
+    function startFlip() {
+        flipTimer = setTimeout(() => {
+            document.getElementById("productImage").src = "back.png";
+        }, 3000);
+    }
+
+    function stopFlip() {
+        clearTimeout(flipTimer);
+        document.getElementById("productImage").src = "front.png";
+    }
+</script>
 
 </body>
 </html>
