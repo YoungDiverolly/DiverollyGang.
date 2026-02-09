@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -6,14 +6,23 @@
     <title>DIVEROLLY GANG | Official</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Общие настройки — ТОТАЛЬНЫЙ ЧЕРНЫЙ */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* ГЛАВНЫЙ ФИКС: Убираем синюю хрень и обводки */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            -webkit-tap-highlight-color: transparent; /* Убирает синий квадрат при клике на мобиле */
+            outline: none !important; /* Убирает синюю рамку фокуса */
+        }
+
         body {
             background-color: #000;
             color: #fff;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
+
+        a { text-decoration: none; }
 
         /* Главный экран */
         header {
@@ -45,11 +54,10 @@
             text-transform: uppercase;
         }
 
-        /* Манифест — ТЕПЕРЬ ТОЖЕ ЧЕРНЫЙ */
         .manifesto {
             padding: 100px 10%;
             text-align: center;
-            background: #000; /* Убрал серый оттенок */
+            background: #000;
             border-top: 1px solid #1a1a1a;
             border-bottom: 1px solid #1a1a1a;
         }
@@ -77,7 +85,6 @@
             border-bottom: 1px solid #c9b37e;
         }
 
-        /* Секция товара */
         .product-section {
             padding: 100px 20px;
             display: flex;
@@ -86,7 +93,6 @@
             background: #000;
         }
 
-        /* Переключатель вкладок */
         .tab-container {
             display: flex;
             gap: 20px;
@@ -110,7 +116,6 @@
             color: #c9b37e;
         }
 
-        /* Контейнер картинки */
         .image-container {
             width: 100%;
             max-width: 500px;
@@ -118,17 +123,12 @@
             overflow: hidden;
             border: 1px solid #1a1a1a;
             background: #000;
-            box-shadow: 0 0 50px rgba(0,0,0,1);
         }
 
         .image-container img {
             width: 100%;
             display: block;
             transition: opacity 0.4s ease, transform 1s ease;
-        }
-
-        .image-container:hover img {
-            transform: scale(1.03);
         }
 
         .product-info {
@@ -140,14 +140,6 @@
             font-family: 'Playfair Display', serif;
             font-size: 2.3rem;
             margin-bottom: 10px;
-        }
-
-        .quality-tags {
-            margin: 20px 0;
-            color: #c9b37e;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
         }
 
         .price {
@@ -165,7 +157,6 @@
             letter-spacing: 3px;
             cursor: pointer;
             transition: 0.4s;
-            text-decoration: none;
             display: inline-block;
         }
 
@@ -196,10 +187,6 @@
             <span class="highlight">DIVEROLLY GANG</span> — это манифест тех, кто выбирает смыслы вместо массовости. 
             Мы известны своим фанатичным подходом к деталям и <span class="highlight">эксклюзивным кроем</span>.
         </p>
-        <p>
-            Каждая вещь — это <span class="highlight">Limited Edition</span>. Мы используем только тяжелый хлопок 480g, 
-            создавая вещи, которые остаются в истории.
-        </p>
     </section>
 
     <section class="product-section">
@@ -214,9 +201,8 @@
 
         <div class="product-info">
             <h2 class="product-title">HANDS DROP #01</h2>
-            <div class="quality-tags">Premium Cotton | 480g | Oversize Fit</div>
             <div class="price">5.500₽</div>
-            <a href="#" class="btn">Заказать в Telegram</a>
+            <a href="https://t.me/твой_ник" target="_blank" class="btn">Заказать в Telegram</a>
         </div>
     </section>
 
@@ -228,24 +214,18 @@
         function changeImage(side, btn) {
             const img = document.getElementById('main-product-img');
             const buttons = document.querySelectorAll('.tab-btn');
-            
             buttons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
             img.style.opacity = 0;
-            
             setTimeout(() => {
                 if (side === 'front') {
-                    // FRONT
                     img.src = "https://i.pinimg.com/736x/3d/59/94/3d5994ebe91a11cff3b1aacf40c7d3e6.jpg";
                 } else {
-                    // BACK
                     img.src = "https://i.pinimg.com/736x/fb/cb/da/fbcbda7a12925f55ffe19b5d35ea323d.jpg";
                 }
                 img.style.opacity = 1;
             }, 300);
         }
     </script>
-
 </body>
 </html>
