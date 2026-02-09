@@ -6,12 +6,13 @@
     <title>DIVEROLLY GANG | Official</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* ГЛАВНЫЙ ФИКС: Оставляем только нужное, чтобы ничего не пропадало */
+        /* Полный сброс лишних эффектов */
         * { 
             margin: 0; 
             padding: 0; 
             box-sizing: border-box; 
             -webkit-tap-highlight-color: transparent;
+            user-select: none; /* Чтобы текст не выделялся случайно при клике на кнопки */
         }
 
         body {
@@ -21,13 +22,11 @@
             overflow-x: hidden;
         }
 
-        /* Убираем синие ссылки */
         a { 
             text-decoration: none; 
-            color: inherit;
+            outline: none;
         }
 
-        /* Главный экран */
         header {
             height: 100vh;
             display: flex;
@@ -80,6 +79,7 @@
             color: #ccc;
             font-size: 1.1rem;
             font-weight: 300;
+            user-select: text; /* Текст манифеста можно копировать */
         }
 
         .highlight {
@@ -102,7 +102,6 @@
             margin-bottom: 30px;
         }
 
-        /* Кнопки переключения FRONT/BACK */
         .tab-btn {
             background: transparent;
             border: 1px solid #333;
@@ -113,7 +112,6 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             transition: 0.3s ease;
-            outline: none;
         }
 
         .tab-btn.active {
@@ -126,6 +124,7 @@
             max-width: 500px;
             border: 1px solid #1a1a1a;
             background: #000;
+            position: relative;
         }
 
         .image-container img {
@@ -137,6 +136,7 @@
         .product-info {
             text-align: center;
             margin-top: 40px;
+            width: 100%;
         }
 
         .product-title {
@@ -153,24 +153,27 @@
             color: #fff;
         }
 
-        /* ГЛАВНАЯ КНОПКА ЗАКАЗА */
+        /* КНОПКА ЗАКАЗА: Теперь она всегда яркая */
         .btn {
             padding: 18px 50px;
-            border: 1px solid #c9b37e;
+            border: 2px solid #c9b37e; /* Чуть толще рамка */
             background: transparent;
-            color: #c9b37e !important; /* Принудительно ставим цвет */
+            color: #c9b37e !important;
             text-transform: uppercase;
             letter-spacing: 3px;
             cursor: pointer;
-            transition: 0.4s;
+            transition: 0.4s ease;
             display: inline-block;
             font-weight: 600;
             font-size: 0.9rem;
+            position: relative;
+            z-index: 10;
         }
 
         .btn:hover {
             background: #c9b37e;
             color: #000 !important;
+            box-shadow: 0 0 20px rgba(201, 179, 126, 0.3);
         }
 
         footer {
