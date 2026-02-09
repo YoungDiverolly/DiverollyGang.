@@ -181,10 +181,6 @@
 <footer>
     © 2026 DIVEROLLY GANG — Fashion Design Concept
 </footer>
-
-</body>
-</html>
-
 </footer>
 
 </body>
