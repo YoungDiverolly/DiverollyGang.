@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
             padding: 0; 
             box-sizing: border-box; 
             -webkit-tap-highlight-color: transparent;
-            user-select: none; /* Чтобы текст не выделялся случайно при клике на кнопки */
+            user-select: none;
         }
 
         body {
@@ -79,13 +79,20 @@
             color: #ccc;
             font-size: 1.1rem;
             font-weight: 300;
-            user-select: text; /* Текст манифеста можно копировать */
+            user-select: text;
         }
 
+        /* ИСПРАВЛЕННЫЙ СТИЛЬ: Золотой акцент для важных слов */
         .highlight {
-            color: #fff;
+            color: #c9b37e; /* Теперь золотой */
             font-weight: 600;
-            border-bottom: 1px solid #c9b37e;
+            border-bottom: 1px solid rgba(201, 179, 126, 0.3); /* Тонкая золотистая линия снизу */
+            transition: 0.3s ease;
+        }
+
+        .highlight:hover {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(201, 179, 126, 0.5);
         }
 
         .product-section {
@@ -153,10 +160,9 @@
             color: #fff;
         }
 
-        /* КНОПКА ЗАКАЗА: Теперь она всегда яркая */
         .btn {
             padding: 18px 50px;
-            border: 2px solid #c9b37e; /* Чуть толще рамка */
+            border: 2px solid #c9b37e;
             background: transparent;
             color: #c9b37e !important;
             text-transform: uppercase;
@@ -212,7 +218,7 @@
 
         <div class="product-info">
             <h2 class="product-title">HANDS DROP #01</h2>
-            <div class="price">10000₸</div>
+            <div class="price">10 000₸</div>
             <a href="https://t.me/lxplaya?text=Привет!%20Хочу%20заказать%20худи%20HANDS%20DROP%20#01" target="_blank" class="btn">Заказать в Telegram</a>
         </div>
     </section>
