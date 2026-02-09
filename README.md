@@ -1,11 +1,11 @@
-
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Шрифты -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Шрифты (жирные веса подключены) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -35,7 +35,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px; /* меньше воздуха */
             background: rgba(255,255,255,0.75);
             backdrop-filter: blur(20px);
         }
@@ -43,22 +43,24 @@
         header h1 {
             font-family: 'Playfair Display', serif;
             font-size: 4.2rem;
-            font-weight: 800;
+            font-weight: 900;      /* жирнее */
             letter-spacing: 8px;
-        }
-
-        header p {
-            margin-top: 25px;
-            max-width: 650px;
-            font-size: 1.15rem;
-            color: #444;
+            margin-top: -50px;     /* выше */
         }
 
         .line {
-            width: 90px;
+            width: 40px;           /* короче */
             height: 2px;
-            background: linear-gradient(90deg, #000, #c9b37e);
-            margin: 35px 0;
+            background: #ffffff;   /* белая */
+            margin: 20px 0;
+        }
+
+        header p {
+            margin-top: 20px;
+            max-width: 650px;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #444;
         }
 
         section {
@@ -68,6 +70,7 @@
         section h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.6rem;
+            font-weight: 800;
             margin-bottom: 30px;
         }
 
@@ -75,6 +78,7 @@
             max-width: 750px;
             font-size: 1.05rem;
             line-height: 1.8;
+            font-weight: 500;
             color: #333;
         }
 
@@ -102,6 +106,7 @@
             font-family: 'Playfair Display', serif;
             margin-bottom: 15px;
             font-size: 1.4rem;
+            font-weight: 700;
         }
 
         footer {
@@ -116,6 +121,7 @@
             header h1 {
                 font-size: 2.9rem;
                 letter-spacing: 4px;
+                margin-top: -30px;
             }
         }
     </style>
@@ -137,7 +143,6 @@
         DIVEROLLY GANG — это дизайнерский проект в сфере моды,
         направленный на создание визуальной идентичности,
         передающей уверенность, статус и индивидуальность.
-        Бренд вдохновлён современной культурой и премиальным стилем.
     </p>
 </section>
 
@@ -149,32 +154,30 @@
             <h3>Минимализм</h3>
             <p>
                 Чистые формы, спокойные оттенки и внимание к деталям.
-                Одежда, подчёркивающая стиль без лишнего шума.
             </p>
         </div>
 
         <div class="box">
             <h3>Street Luxury</h3>
             <p>
-                Слияние уличной моды и люкса.
-                Современный силуэт и премиальное ощущение.
+                Слияние уличной моды и люкса с премиальным ощущением.
             </p>
         </div>
 
         <div class="box">
             <h3>Лимитированные дропы</h3>
             <p>
-                Ограниченные коллекции,
-                создающие ощущение эксклюзивности и ценности.
+                Ограниченные коллекции, подчёркивающие эксклюзивность.
             </p>
         </div>
     </div>
 </section>
 
 <section>
-    <h2>Уникальность Бренда</h2>
+    <h2>Уникальность бренда</h2>
     <p>
-       Каждая вещь из этого сайта создает кастомные варианты одежды
+        Каждая вещь создаётся как кастомный элемент стиля,
+        отражающий индивидуальность владельца.
     </p>
 </section>
 
