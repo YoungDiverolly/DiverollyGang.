@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -6,13 +6,12 @@
     <title>DIVEROLLY GANG | Official</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* ГЛАВНЫЙ ФИКС: Убираем синюю хрень и обводки */
+        /* ГЛАВНЫЙ ФИКС: Оставляем только нужное, чтобы ничего не пропадало */
         * { 
             margin: 0; 
             padding: 0; 
             box-sizing: border-box; 
-            -webkit-tap-highlight-color: transparent; /* Убирает синий квадрат при клике на мобиле */
-            outline: none !important; /* Убирает синюю рамку фокуса */
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -22,7 +21,11 @@
             overflow-x: hidden;
         }
 
-        a { text-decoration: none; }
+        /* Убираем синие ссылки */
+        a { 
+            text-decoration: none; 
+            color: inherit;
+        }
 
         /* Главный экран */
         header {
@@ -38,7 +41,7 @@
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 10vw, 5rem);
+            font-size: clamp(2.5rem, 10vw, 5rem);
             letter-spacing: 12px;
             color: #c9b37e;
             text-transform: uppercase;
@@ -64,7 +67,7 @@
 
         .manifesto h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #c9b37e;
             margin-bottom: 30px;
             letter-spacing: 2px;
@@ -86,7 +89,7 @@
         }
 
         .product-section {
-            padding: 100px 20px;
+            padding: 80px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -95,20 +98,22 @@
 
         .tab-container {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             margin-bottom: 30px;
         }
 
+        /* Кнопки переключения FRONT/BACK */
         .tab-btn {
-            background: none;
+            background: transparent;
             border: 1px solid #333;
-            color: #555;
-            padding: 10px 25px;
+            color: #888;
+            padding: 12px 30px;
             cursor: pointer;
             font-size: 0.8rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            transition: 0.3s;
+            transition: 0.3s ease;
+            outline: none;
         }
 
         .tab-btn.active {
@@ -119,8 +124,6 @@
         .image-container {
             width: 100%;
             max-width: 500px;
-            position: relative;
-            overflow: hidden;
             border: 1px solid #1a1a1a;
             background: #000;
         }
@@ -128,7 +131,7 @@
         .image-container img {
             width: 100%;
             display: block;
-            transition: opacity 0.4s ease, transform 1s ease;
+            transition: opacity 0.4s ease;
         }
 
         .product-info {
@@ -140,35 +143,40 @@
             font-family: 'Playfair Display', serif;
             font-size: 2.3rem;
             margin-bottom: 10px;
+            color: #fff;
         }
 
         .price {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 600;
             margin-bottom: 30px;
+            color: #fff;
         }
 
+        /* ГЛАВНАЯ КНОПКА ЗАКАЗА */
         .btn {
-            padding: 15px 60px;
+            padding: 18px 50px;
             border: 1px solid #c9b37e;
-            background: none;
-            color: #c9b37e;
+            background: transparent;
+            color: #c9b37e !important; /* Принудительно ставим цвет */
             text-transform: uppercase;
             letter-spacing: 3px;
             cursor: pointer;
             transition: 0.4s;
             display: inline-block;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
 
         .btn:hover {
             background: #c9b37e;
-            color: #000;
+            color: #000 !important;
         }
 
         footer {
             padding: 60px;
             text-align: center;
-            color: #333;
+            color: #444;
             font-size: 0.7rem;
             letter-spacing: 2px;
         }
@@ -202,7 +210,7 @@
         <div class="product-info">
             <h2 class="product-title">HANDS DROP #01</h2>
             <div class="price">5.500₽</div>
-            <a href="https://t.me/твой_ник" target="_blank" class="btn">Заказать в Telegram</a>
+            <a href="https://t.me/lxplaya?text=Привет!%20Хочу%20заказать%20худи%20HANDS%20DROP%20#01" target="_blank" class="btn">Заказать в Telegram</a>
         </div>
     </section>
 
@@ -214,9 +222,12 @@
         function changeImage(side, btn) {
             const img = document.getElementById('main-product-img');
             const buttons = document.querySelectorAll('.tab-btn');
+            
             buttons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+            
             img.style.opacity = 0;
+            
             setTimeout(() => {
                 if (side === 'front') {
                     img.src = "https://i.pinimg.com/736x/3d/59/94/3d5994ebe91a11cff3b1aacf40c7d3e6.jpg";
@@ -224,7 +235,7 @@
                     img.src = "https://i.pinimg.com/736x/fb/cb/da/fbcbda7a12925f55ffe19b5d35ea323d.jpg";
                 }
                 img.style.opacity = 1;
-            }, 300);
+            }, 250);
         }
     </script>
 </body>
