@@ -212,7 +212,7 @@
 
         <div class="product-info">
             <h2 class="product-title">HANDS DROP #01</h2>
-            <div class="price">5.500₽</div>
+            <div class="price">10000₸</div>
             <a href="https://t.me/lxplaya?text=Привет!%20Хочу%20заказать%20худи%20HANDS%20DROP%20#01" target="_blank" class="btn">Заказать в Telegram</a>
         </div>
     </section>
