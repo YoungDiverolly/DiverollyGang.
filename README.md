@@ -3,207 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIVEROLLY GANG | Official Concept</title>
+    <title>DIVEROLLY GANG | Official</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
+        /* Обнуляем всё лишнее, чтобы сайт был на весь экран */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-color: #000; /* Глубокий черный */
+            color: #fff;
             font-family: 'Inter', sans-serif;
-            /* Градиент стал более мягким и премиальным */
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-            color: #ffffff;
-            min-height: 100vh;
             overflow-x: hidden;
         }
 
+        /* Главный экран на всю высоту (Viewport Height) */
         header {
-            min-height: 100vh;
+            width: 100%;
+            height: 100vh; 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(15px);
+            position: relative;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+            padding: 20px;
         }
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 5rem;
+            font-size: clamp(2.5rem, 8vw, 6rem); /* Адаптивный размер шрифта */
             font-weight: 900;
-            letter-spacing: 12px;
-            color: #c9b37e; /* Золотистый акцент */
-            margin-bottom: 20px;
+            letter-spacing: 0.15em;
+            color: #c9b37e;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #c9b37e;
+            padding-bottom: 10px;
         }
 
-        .line {
-            width: 60px;
+        .line-accent {
+            width: 80px;
             height: 2px;
             background: #c9b37e;
-            margin: 20px 0;
+            margin: 30px 0;
         }
 
         header p {
-            max-width: 700px;
-            font-size: 1.2rem;
-            line-height: 1.6;
+            max-width: 800px;
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            line-height: 1.8;
             font-weight: 300;
-            color: #ddd;
+            color: #aaa;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
         }
 
-        /* ==== NEW: QUALITY SECTION ==== */
-        .quality-section {
-            padding: 100px 10%;
-            background: #ffffff;
-            color: #111;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+        /* Секция с качеством — теперь она идет следом */
+        .features {
+            min-height: 50vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            background: #fff;
+            color: #000;
+            padding: 80px 10%;
+        }
+
+        .feature-box {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
             text-align: center;
         }
 
-        .quality-item h3 {
+        .feature-box h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             margin-bottom: 15px;
-        }
-
-        .quality-item p {
-            font-size: 0.95rem;
-            color: #555;
-            line-height: 1.5;
-        }
-
-        /* ==== PRODUCT ==== */
-        section.collection {
-            padding: 120px 10%;
-            text-align: center;
-        }
-
-        section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 60px;
-            color: #fff;
-        }
-
-        .product-card {
-            width: 450px;
-            margin: 0 auto;
-            position: relative;
-            cursor: crosshair;
-        }
-
-        .product-card img {
-            width: 100%;
-            border-radius: 5px; /* Более строгие углы для люкса */
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-            filter: grayscale(20%);
-        }
-
-        .product-card:hover img {
-            transform: scale(1.02);
-            filter: grayscale(0%);
-        }
-
-        .price-tag {
-            margin-top: 25px;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #c9b37e;
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px;
-            background: #000;
-            color: #555;
-            font-size: 0.8rem;
-            letter-spacing: 3px;
             text-transform: uppercase;
         }
 
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; letter-spacing: 5px; }
-            .product-card { width: 100%; }
-            .quality-section { padding: 60px 5%; }
+        /* Кнопка действия */
+        .cta-button {
+            margin-top: 50px;
+            padding: 15px 40px;
+            border: 1px solid #c9b37e;
+            color: #c9b37e;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background: #c9b37e;
+            color: #000;
+        }
+
+        footer {
+            padding: 40px;
+            background: #000;
+            text-align: center;
+            color: #444;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>DIVEROLLY GANG</h1>
-    <div class="line"></div>
-    <p>
-        Новая эра уличной моды. <br>
-        Бескомпромиссное качество. Эстетика хаоса и порядка.
-    </p>
-</header>
-
-<section class="quality-section">
-    <div class="quality-item">
-        <h3>PREMIUM TEXTILE</h3>
-        <p>Используем только плотный хлопок высшего сорта (450g+). Ткань, которая держит форму и приятна к телу годами.</p>
-    </div>
-    <div class="quality-item">
-        <h3>HANDMADE DETAILS</h3>
-        <p>Каждый принт и шов проходят ручной контроль. Мы не делаем масс-маркет — мы создаем артефакты.</p>
-    </div>
-    <div class="quality-item">
-        <h3>NEW GEN CULTURE</h3>
-        <p>DIVEROLLY GANG — это не просто одежда. Это манифест свободы, объединяющий тех, кто диктует свои правила.</p>
-    </div>
-</section>
-
-<section class="collection">
-    <h2>DROP #01</h2>
-
-    <div class="product-card" 
-         onmouseenter="startFlip()" 
-         onmouseleave="stopFlip()">
+    <header>
+        <h1>DIVEROLLY GANG</h1>
+        <div class="line-accent"></div>
+        <p>НОВАЯ ЭРА УЛИЧНОЙ МОДЫ.<br>БЕСКОМПРОМИССНОЕ КАЧЕСТВО. ЭСТЕТИКА ХАОСА И ПОРЯДКА.</p>
         
-        <img id="productImage" src="front.png" alt="Diverolly Gang Limited Edition">
-        <div class="price-tag">LIMITED DROP</div>
-    </div>
-</section>
+        <a href="#collection" class="cta-button">Смотреть дроп</a>
+    </header>
 
-<footer>
-    © 2026 DIVEROLLY GANG — DEFINING THE NEW STANDARD
-</footer>
+    <section class="features">
+        <div class="feature-box">
+            <h3>QUALITY</h3>
+            <p>Премиальный хлопок 480g. Износостойкость, проверенная улицами.</p>
+        </div>
+        <div class="feature-box">
+            <h3>DESIGN</h3>
+            <p>Уникальный крой и внимание к каждой детали фурнитуры.</p>
+        </div>
+        <div class="feature-box">
+            <h3>EXCLUSIVE</h3>
+            <p>Лимитированные тиражи без повторов. Только для своих.</p>
+        </div>
+    </section>
 
-<script>
-    let flipTimer;
-
-    function startFlip() {
-        // Уменьшил задержку до 1 секунды, чтобы юзер сразу видел эффект
-        flipTimer = setTimeout(() => {
-            const img = document.getElementById("productImage");
-            img.style.opacity = "0.7";
-            setTimeout(() => {
-                img.src = "back.png";
-                img.style.opacity = "1";
-            }, 200);
-        }, 800);
-    }
-
-    function stopFlip() {
-        clearTimeout(flipTimer);
-        const img = document.getElementById("productImage");
-        img.src = "front.png";
-    }
-</script>
+    <footer>
+        © 2026 DIVEROLLY GANG — ALL RIGHTS RESERVED
+    </footer>
 
 </body>
 </html>
